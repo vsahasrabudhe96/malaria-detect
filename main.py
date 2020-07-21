@@ -1,15 +1,34 @@
-from flask import Flask
-#from app import views
-
-app = Flask(__name__)
 
 from flask import render_template, request
 from flask import redirect, url_for
 import os
 from PIL import Image
-from utils import predict
 from keras.models import load_model
 model = load_model('model.h5')
+import os
+import numpy as np
+import pandas as pd 
+import matplotlib.pyplot as plt
+import cv2
+model = load_model('model.h5')
+
+print("Model Loaded successfully")
+
+from flask import Flask
+
+app = Flask(__name__)
+
+
+def predict(img_path,model,filename):
+    temp = cv2.imread(img_path)
+    temp2 = cv2.resize(temp,(64,64),interpolation = cv2.INTER_AREA)
+    temp2 = temp2.reshape((-1,64,64,3))
+    temp3 = np.array(temp2/255.0)
+
+    pred = model.predict(temp3)
+    pred = ['Infected' if pred<0.5 else 'NOT Infected']
+    cv2.imwrite('./static/predict/{}'.format(filename),temp)
+    return pred[0]
 
 UPLOAD_FOLDER = 'static/upload'
 
