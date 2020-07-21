@@ -3,7 +3,7 @@ from flask import redirect, url_for
 import os
 from PIL import Image
 from utils import predict
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 model = load_model('./model/model.h5')
 
 UPLOAD_FOLDER = 'static/upload'
