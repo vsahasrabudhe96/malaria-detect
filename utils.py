@@ -5,7 +5,7 @@ import cv2
 from keras.models import load_model
 import PIL
 
-model = load_model('./model/model.h5')
+model = load_model('model.h5')
 print("Model Loaded successfully")
 
 def predict(img_path,model,filename):
