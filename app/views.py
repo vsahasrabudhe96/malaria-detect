@@ -4,7 +4,7 @@ import os
 from PIL import Image
 from utils import predict
 from keras.models import load_model
-model = load_model('./model/model.h5')
+model = load_model('model.h5')
 
 UPLOAD_FOLDER = 'static/upload'
 
