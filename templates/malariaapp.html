@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block bodyblock %}
+
+    <div class="container">
+        <h3 class="content" style="font-size:xx-large;"> Malaria Detction App</h3>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <h3 style="font-size: medium;">
+            ABOUT MALARIA:
+        </h3>
+        <p class="content">
+            Malaria is a disease caused by a parasite. The parasite is transmitted to humans through the bites of infected mosquitoes. People who have malaria usually feel very sick, with a high fever and shaking chills. Each year, approximately 210 million people are infected with malaria, and about 440,000 people die from the disease.
+            I have created this app based on the dataset provided by National Library of Medicine.
+        </p>
+    </div>
+    <div align="center">
+
+        <a href="{{url_for('malariadetect')}}" class="btn btn-outline-primary">Check Out</a>
+    </div>
+{% endblock bodyblock %}

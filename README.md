@@ -1,0 +1,2 @@
+# MalariaDetectionAPI
+# MalariaDetect

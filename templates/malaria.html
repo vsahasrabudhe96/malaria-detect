@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block bodyblock %}
+
+    <div class="container">
+    <br>
+        <h3 class="content"> Let's Detect the blood samples</h3>
+    <br>
+    </div>
+
+    <div class="container">
+        <br>
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <label for="upload">Upload to predict</label>
+            <input type="file" id="upload" name="image" required='true'>
+            <input type="submit" value="Predict">
+        </form>
+
+    </div>
+    {% if fileupload %}
+    
+        <div class="container">
+            <div class="row">
+               <!--<div class="col-md-6">
+                    <br>
+                    <img src="{{url_for('static',filename='upload/')}}{{ img_name }}" alt="detect" width="{{ w }}" height=250>
+                </div>-->
+                <div class="container">
+                    <br>
+                    <br>
+                    <div align='center'>
+                        <p> <span style="color: darkblue">{{ prediction_text }}</span></p>
+                        <br>
+                        <img src="{{url_for('static',filename='predict/')}}{{ img_name }}" alt="detect" width="{{ w }}" height=250 >
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    {% endif %}
+{% endblock bodyblock %}

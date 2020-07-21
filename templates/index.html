@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block bodyblock %}
+<div class="container">
+    <br><br>
+    <h3 class="content">Welcome to <span style="color: red;">Malaria Detection app</span></h3>
+    <br><br>
+    <p class="content"> The following app is made to help analyse Malaria cells in the blood samples. So, by looking at the blood samples we will be able to detect whether that person is infected by Malaria or not.</p>
+    <br>
+    <div class="container">
+        <img src="{{ url_for('static',filename='images/malaria.png')}}" alt="" height="400" width="800">
+    </div>
+</div>
+{% endblock bodyblock %}
